@@ -52,6 +52,7 @@ if (isset($_POST["login"])) {
     <title>Document</title>
 </head>
 <body>
+    <h1>Tst</h1>
     <h1>Login</h1>
     <?php if(isset($error)) : ?>
         <p>invalid</p>
