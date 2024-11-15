@@ -1,9 +1,9 @@
 <?php 
 // Database connection parameters
-$host = "localhost";
-$username = "root";
-$password = "";
-$database = "spp";
+$host = "sql300.infinityfree.com";
+$username = "if0_37717443";
+$password = "Fy8m4KyTG0pPqqz";
+$database = "if0_37717443_spp";
 
 // Establish a connection to the database
 $conn = mysqli_connect($host, $username, $password, $database);
