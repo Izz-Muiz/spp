@@ -9,12 +9,20 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      # Step 1: Checkout the repository
+      - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Step 2: Deploy via FTP
       - name: Deploy to FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.1
         with:
-          ftp-server: ${{ secrets.FTP_HOST }}
-          ftp-username: ${{ secrets.FTP_USERNAME }}
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
+          server: ${{ secrets.FTP_HOST }}     # FTP hostname (e.g., ftpupload.net)
+          username: ${{ secrets.FTP_USER }}   # FTP username
+          password: ${{ secrets.FTP_PASS }}   # FTP password
+          local-dir: ./                       # The root directory of your project
+          server-dir: /htdocs                 # The directory on the InfinityFree server
+          exclude: |                          # Exclude unnecessary files
+            .git*
+            .github/
+            README.md
