@@ -21,7 +21,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}   # FTP username
           password: ${{ secrets.FTP_PASSWORD }}   # FTP password
           local-dir: ./                       # The root directory of your project
-          server-dir: /htdocs                 # The directory on the InfinityFree server
+          server-dir: /htdocs/                # The directory on the InfinityFree server
           exclude: |                          # Exclude unnecessary files
             .git*
             .github/
