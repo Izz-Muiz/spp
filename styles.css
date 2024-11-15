@@ -1,0 +1,112 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+/* Search Styles */
+.search-form {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 100%; /* Full width to fit the layout */
+  max-width: 400px; /* Set a maximum width for larger screens */
+  margin: 0 auto; /* Center the form */
+}
+
+.search-input {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus {
+  border-color: #4caf50; /* Change to your preferred color */
+}
+
+.search-button {
+  background-color: #4caf50; /* Change to your preferred color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #367c38; /* Darker shade for hover effect */
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+/* Image Styles */
+img {
+  width: 50px; /* Set a fixed width for images */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px; /* Rounded corners for images */
+}
+
+/* Action Links */
+a {
+  text-decoration: none;
+  color: #4caf50;
+  margin-right: 10px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #777;
+}
