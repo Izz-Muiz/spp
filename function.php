@@ -1,12 +1,9 @@
-<?php 
-// Database connection parameters
-$host = "sql300.infinityfree.com";
-$username = "if0_37717443";
-$password = "Fy8m4KyTG0pPqqz";
-$database = "if0_37717443_spp";
+<?php
+// Load database configuration
+$config = include('config.php');
 
 // Establish a connection to the database
-$conn = mysqli_connect($host, $username, $password, $database);
+$conn = mysqli_connect($config['host'], $config['username'], $config['password'], $config['database']);
 
 // Check if the connection was successful
 if (!$conn) {
