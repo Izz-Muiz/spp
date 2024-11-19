@@ -16,7 +16,8 @@ if (!$conn) {
  * @param string $query The SQL query to execute.
  * @return array The result set as an array of associative arrays.
  */
-function query($query) {
+function query($query)
+{
     global $conn;
 
     // Execute the query
@@ -35,7 +36,8 @@ function query($query) {
     return $rows;
 }
 
-function addStudent($data) {
+function addStudent($data)
+{
     global $conn;
     $ic = htmlspecialchars($data["ic"]);
     $name = htmlspecialchars($data["name"]);
@@ -56,7 +58,8 @@ function addStudent($data) {
     return mysqli_affected_rows($conn);
 }
 
-function updateStudent($data) {
+function updateStudent($data)
+{
     global $conn;
     $id = $data["id"];
     $ic = htmlspecialchars($data["ic"]);
@@ -65,7 +68,7 @@ function updateStudent($data) {
     $course = htmlspecialchars($data["course"]);
     // $image = htmlspecialchars($data["image"]);
     $oldImage = htmlspecialchars($data["oldImage"]);
-    
+
     if ($_FILES['image']['error'] === 4) {
         $image = $oldImage;
     } else {
@@ -86,7 +89,8 @@ function updateStudent($data) {
     return mysqli_affected_rows($conn);
 }
 
-function deleteStudent($id) {
+function deleteStudent($id)
+{
     global $conn;
 
     $delete = "DELETE FROM students WHERE id = '$id'";
@@ -94,7 +98,8 @@ function deleteStudent($id) {
     return mysqli_affected_rows($conn);
 }
 
-function find($search) {
+function find($search)
+{
     $query = "SELECT * FROM students WHERE 
                 name LIKE '%$search%' 
                 OR ic LIKE '%$search%' 
@@ -103,7 +108,8 @@ function find($search) {
     return query($query);
 }
 
-function upload() {
+function upload()
+{
     $fileName = $_FILES['image']['name'];
     $fileSize = $_FILES['image']['size'];
     $fileError = $_FILES['image']['error'];
@@ -115,7 +121,7 @@ function upload() {
     }
 
     $validExtension = ['jpg', 'jpeg', 'png'];
-    $extension = explode('.',$fileName);
+    $extension = explode('.', $fileName);
     $extension = strtolower(end($extension));
 
     if (!in_array($extension, $validExtension)) {
@@ -134,7 +140,8 @@ function upload() {
     return $fileName;
 }
 
-function register($data) {
+function register($data)
+{
     global $conn;
 
     $username = strtolower(stripslashes($data["username"]));
@@ -163,7 +170,4 @@ function register($data) {
     mysqli_query($conn, "INSERT INTO user VALUES ('', '$username', '$password')");
 
     return mysqli_affected_rows($conn);
-
 }
-
-?>

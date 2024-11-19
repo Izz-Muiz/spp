@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 require "function.php";
 
@@ -7,7 +7,7 @@ if (isset($_COOKIE['id']) && isset($_COOKIE['key'])) {
     $key = $_COOKIE['key'];
 
     $result = mysqli_query($conn, "SELECT username FROM user WHERE id = $id");
-    $row= mysqli_fetch_assoc($result);
+    $row = mysqli_fetch_assoc($result);
     if ($key === hash('sha256', $row['username'])) {
         $_SESSION['login'] = true;
     }
@@ -31,8 +31,8 @@ if (isset($_POST["login"])) {
             $_SESSION["login"] = true;
             if (isset($_POST['remember'])) {
 
-                setcookie('id', $row['id'], time()+60);
-                setcookie('key', hash('sha256', $row['username']), time()+60);
+                setcookie('id', $row['id'], time() + 60);
+                setcookie('key', hash('sha256', $row['username']), time() + 60);
             }
             header("Location: index.php");
             exit;
@@ -46,12 +46,14 @@ if (isset($_POST["login"])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="css/login.css">
 </head>
+
 <body>
     <form action="" method="post">
         <h1>Login</h1>
@@ -68,8 +70,8 @@ if (isset($_POST["login"])) {
                 <input type="password" name="password" id="password">
             </li>
             <label for="remember" class="remember-label">
-                    <input type="checkbox" name="remember" id="remember">
-                    Remember Me!
+                <input type="checkbox" name="remember" id="remember">
+                Remember Me!
             </label>
             <li>
                 <button type="submit" name="login">Login</button>
@@ -77,4 +79,5 @@ if (isset($_POST["login"])) {
         </ul>
     </form>
 </body>
+
 </html>

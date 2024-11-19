@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__ . '/vendor/autoload.php';
-require "function.php"; 
+require "function.php";
 
 // Fetch students from the database
 $students = query("SELECT * FROM students ORDER BY name");
@@ -55,15 +55,15 @@ foreach ($students as $student) {
     $course = htmlspecialchars($student['course']);
 
     // Check if the image file exists
-    $imageTag = file_exists($imageSrc) ? '<img src="'.$imageSrc.'">' : '<img src="img/default.png">'; // Use a default image if not found
+    $imageTag = file_exists($imageSrc) ? '<img src="' . $imageSrc . '">' : '<img src="img/default.png">'; // Use a default image if not found
 
     $html .= '<tr>
-                <td>'.$i++.'</td>
-                <td>'.$imageTag.'</td>
-                <td>'.$ic.'</td>
-                <td>'.$name.'</td>
-                <td>'.$email.'</td>
-                <td>'.$course.'</td> 
+                <td>' . $i++ . '</td>
+                <td>' . $imageTag . '</td>
+                <td>' . $ic . '</td>
+                <td>' . $name . '</td>
+                <td>' . $email . '</td>
+                <td>' . $course . '</td> 
               </tr>';
 }
 

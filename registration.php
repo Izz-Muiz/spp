@@ -1,4 +1,4 @@
-<?php 
+<?php
 require "function.php";
 if (isset($_POST['register'])) {
     if (register($_POST) > 0) {
@@ -14,12 +14,14 @@ if (isset($_POST['register'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Register</title>
     <link rel="stylesheet" href="css/login.css">
 </head>
+
 <body>
     <form action="" method="post">
         <h1>Registration</h1>
@@ -42,4 +44,5 @@ if (isset($_POST['register'])) {
         </ul>
     </form>
 </body>
+
 </html>

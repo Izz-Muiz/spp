@@ -21,4 +21,3 @@ if (deleteStudent($id) > 0) {
     </script>";
     echo mysqli_error($conn);
 }
-?>
