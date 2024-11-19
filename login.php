@@ -49,28 +49,28 @@ if (isset($_POST["login"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <h1>Test</h1>
-    <h1>Login</h1>
-    <?php if(isset($error)) : ?>
-        <p>invalid</p>
-    <?php endif; ?>
     <form action="" method="post">
+        <h1>Login</h1>
+        <?php if (isset($error)) : ?>
+            <p>Invalid username or password</p>
+        <?php endif; ?>
         <ul>
             <li>
-                <label for="username">Username : </label>
+                <label for="username">Username:</label>
                 <input type="text" name="username" id="username">
             </li>
             <li>
-                <label for="password">Password : </label>
+                <label for="password">Password:</label>
                 <input type="password" name="password" id="password">
             </li>
-            <li>
-                <input type="checkbox" name="remember" id="remember">
-                <label for="remember">Remember Me!</label>
-            </li>
+            <label for="remember" class="remember-label">
+                    <input type="checkbox" name="remember" id="remember">
+                    Remember Me!
+            </label>
             <li>
                 <button type="submit" name="login">Login</button>
             </li>
