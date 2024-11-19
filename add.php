@@ -29,7 +29,7 @@ if (isset($_POST["submit"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add New Student</title>
-    <link rel="stylesheet" href="add.css"> <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="css/add.css">
 </head>
 <body>
     <h1>Add New Student</h1>
